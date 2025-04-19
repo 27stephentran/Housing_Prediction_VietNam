@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dự đoán giá nhà</title>
+</head>
+<body>
+    <h2>Nhập thông tin bất động sản</h2>
+    <form method="post">
+        Địa chỉ: <input type="text" name="address" required><br><br>
+        Diện tích (m²): <input type="number" step="0.1" name="area" required><br><br>
+        Chiều rộng mặt tiền (m): <input type="number" step="0.1" name="frontage" required><br><br>
+        Chiều rộng đường vào (m): <input type="number" step="0.1" name="access_road" required><br><br>
+        Số tầng: <input type="number" name="floors" required><br><br>
+        Số phòng ngủ: <input type="number" name="bedrooms" required><br><br>
+        Số phòng tắm: <input type="number" name="bathrooms" required><br><br>
+        <input type="submit" value="Dự đoán">
+    </form>
+
+    {% if prediction %}
+        <h3>Kết quả dự đoán: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
