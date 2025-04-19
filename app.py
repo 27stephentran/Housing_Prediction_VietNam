@@ -32,6 +32,7 @@ def preprocess_input(form):
     floors = float(form['floors'])
     bedrooms = float(form['bedrooms'])
     bathrooms = float(form['bathrooms'])
+    
 
     # Tạo DataFrame từ input
     df = pd.DataFrame([{
