@@ -113,6 +113,7 @@ def prepare_input(form_input):
     print(X_ready_df.T)
 
     return X_ready_df
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     prediction = None

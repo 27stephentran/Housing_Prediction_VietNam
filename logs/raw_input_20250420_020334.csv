@@ -1,0 +1,2 @@
+Area,Frontage,Access Road,Floors,Bedrooms,Bathrooms,Legal status,Furniture state,is_major_city,is_center_district,region,Total Room,Total Room + Floor,Bedrooms * Area,Bathrooms * Area,Area_Floors,High_Values Real Estate,AveragePricePerSquare,Province_Project
+100,6.0,10.0,2,3,3,Sổ hồng,Đầy đủ,1,1,South,6,8,300,300,200,1,0.0,Hồ Chí Minh_False
