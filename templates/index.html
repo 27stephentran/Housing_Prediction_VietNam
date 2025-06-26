@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dự đoán giá nhà</title>
+    <title>Dự đoán giá bất động sản</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; }
+        .result { margin-top: 20px; font-size: 20px; font-weight: bold; color: blue; }
+    </style>
 </head>
 <body>
-    <h2>Nhập thông tin bất động sản</h2>
-    <form method="post">
-        Địa chỉ: <input type="text" name="address" required><br><br>
-        Diện tích (m²): <input type="number" step="0.1" name="area" required><br><br>
-        Chiều rộng mặt tiền (m): <input type="number" step="0.1" name="frontage" required><br><br>
-        Chiều rộng đường vào (m): <input type="number" step="0.1" name="access_road" required><br><br>
-        Số tầng: <input type="number" name="floors" required><br><br>
-        Số phòng ngủ: <input type="number" name="bedrooms" required><br><br>
-        Số phòng tắm: <input type="number" name="bathrooms" required><br><br>
-        <input type="submit" value="Dự đoán">
+    <h1>Dự đoán giá nhà tại Việt Nam</h1>
+    <form method="POST">
+        <label>Địa chỉ (bao gồm tên tỉnh/thành và quận):</label>
+        <input type="text" name="address" required>
+
+        <label>Diện tích (m²):</label>
+        <input type="number" step="0.1" name="area" required>
+
+        <label>Chiều rộng mặt tiền (m):</label>
+        <input type="number" step="0.1" name="frontage" required>
+
+        <label>Chiều rộng đường vào (m):</label>
+        <input type="number" step="0.1" name="access_road" required>
+
+        <label>Số tầng:</label>
+        <input type="number" step="1" name="floors" required>
+
+        <label>Số phòng ngủ:</label>
+        <input type="number" step="1" name="bedrooms" required>
+
+        <label>Số phòng tắm:</label>
+        <input type="number" step="1" name="bathrooms" required>
+
+        <label>Giá trung bình một mét vuông (tỷ/m2):</label>
+        <input type="number" step="0.01" name="AveragePricePerSquare" required>
+
+        <label>Tình trạng pháp lý:</label>
+        <select name="legal_status">
+            <option value="Có sổ">Có sổ</option>
+            <option value="Chưa có sổ">Chưa có sổ</option>
+        </select>
+
+        <label>Tình trạng nội thất:</label>
+        <select name="furniture_state">
+            <option value="Đầy đủ nội thất">Đầy đủ nội thất</option>
+            <option value="Cơ bản">Cơ bản</option>
+            <option value="Không có">Không có</option>
+        </select>
+
+        <button type="submit">Dự đoán</button>
     </form>
 
     {% if prediction %}
-        <h3>Kết quả dự đoán: {{ prediction }}</h3>
+        <div class="result">Kết quả dự đoán: {{ prediction }}</div>
     {% endif %}
 </body>
 </html>
